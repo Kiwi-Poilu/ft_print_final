@@ -3,8 +3,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-#ifndef FT_PRINTF_FT_PRINTF_H
-#define FT_PRINTF_FT_PRINTF_H
+#ifndef FT_PRINTF_H
+#define FT_PRINTF_H
 
 int 	ft_printf(const char *format, ...);
 
@@ -18,7 +18,13 @@ typedef struct s_data
 	int dot;
 	int width;
 }				t_data;
+void	ft_dash(int *i, t_data *flags);
 
+void	ft_plus(int *i, t_data *flags);
+int     ft_len_un_nb(unsigned int n);
+void	ft_space(int *i, t_data *flags);
+void	ft_zero(int *i, t_data *flags);
+int	ft_is_flag(char c);
 int ft_is_digit(char c);
 
 int	ft_atoi(char *str);
@@ -67,4 +73,4 @@ void 	ft_fill_flags(const char *format, int *i, va_list args, t_data *flags);
 void 	ft_init_flags(t_data *flags);
 int 	ft_is_flag(char c);
 
-#endif //FT_PRINTF_FT_PRINTF_H
+#endif

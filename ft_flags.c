@@ -1,5 +1,20 @@
 #include "ft_printf.h"
 
+int ft_len_un_nb(unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		i++;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
 int	ft_len_nb(int n)
 {
 	int	i;

@@ -9,7 +9,7 @@ int	ft_print_zeros(int len, t_data *flags, int nb)
 	out = 0;
 	if (flags->dot > len)
 		zeros = flags->dot - len;
-	if (flags->dot > len && nb < 0)
+	if (flags->dot >= len && nb < 0)
 		zeros++;
 	while (zeros-- > 0)
 		out += ft_putchar('0');
@@ -38,7 +38,7 @@ int	ft_print_nb(int nb, t_data *flags)
 	int	out;
 
 	out = 0;
-	if (flags->dot > 0)
+	if (flags->dot >= 0)
 		flags->zero = 0;
 	if (flags->dot == -1)
 		flags->dot = 1;
